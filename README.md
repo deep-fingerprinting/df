@@ -23,46 +23,32 @@ The datasets for the open world are also available upon request to the authors.
 https://drive.google.com/open?id=1sFjUqo3r4E0KZsTWF0f-3zfLM5FfRot9
 
 The dataset including 6 files 
+- `X_train_NoDef.pkl` : Packet's directions sequence (used as the training data)
+- `y_train_NoDef.pkl` : Corresponding website's classes sequece (used as the training data)
+- `X_valid_NoDef.pkl` : Packet's directions sequence (used as the validation data)
+- `y_valid_NoDef.pkl` : Corresponding website's classes sequece (used as the validation data)
+- `X_test_NoDef.pkl` : Packet's directions sequence (used as the testing data)
+- `y_test_NoDef.pkl` : Corresponding website's classes sequece (used as the testing data)
 
-X_train_NoDef.pkl : Packet's directions sequence (used as the training data)
-
-y_train_NoDef.pkl : Corresponding website's classes sequece (used as the training data)
-
-X_valid_NoDef.pkl : Packet's directions sequence (used as the validation data)
-
-y_valid_NoDef.pkl : Corresponding website's classes sequece (used as the validation data)
-
-X_test_NoDef.pkl : Packet's directions sequence (used as the testing data)
-
-y_test_NoDef.pkl : Corresponding website's classes sequece (used as the testing data)
-
-Before training and evaluating DF model please place these files into ../df/dataset/NoDef/
+Before training and evaluating DF model please place these files into `../df/dataset/NoDef/`
 
 ### Dataset used for defended dataset(WTF-PAD) in the closed-world scenario
 https://drive.google.com/open?id=187JjQ-Dz4g4zMBkOE4yo_rZcDkkT5zth
 
 The dataset including 6 files 
+- `X_train_WTFPAD.pkl` : Packet's directions sequence (used as the training data)
+- `y_train_WTFPAD.pkl` : Corresponding website's classes sequece (used as the training data)
+- `X_valid_WTFPAD.pkl` : Packet's directions sequence (used as the validation data)
+- `y_valid_WTFPAD.pkl` : Corresponding website's classes sequece (used as the validation data)
+- `X_test_WTFPAD.pkl` : Packet's directions sequence (used as the testing data)
+- `y_test_WTFPAD.pkl` : Corresponding website's classes sequece (used as the testing data)
 
-X_train_WTFPAD.pkl : Packet's directions sequence (used as the training data)
-
-y_train_WTFPAD.pkl : Corresponding website's classes sequece (used as the training data)
-
-X_valid_WTFPAD.pkl : Packet's directions sequence (used as the validation data)
-
-y_valid_WTFPAD.pkl : Corresponding website's classes sequece (used as the validation data)
-
-X_test_WTFPAD.pkl : Packet's directions sequence (used as the testing data)
-
-y_test_WTFPAD.pkl : Corresponding website's classes sequece (used as the testing data)
-
-Before training and evaluating DF model please place these files into ../df/dataset/WTFPAD/
+Before training and evaluating DF model please place these files into `../df/dataset/WTFPAD/`
 
 ## Reproduce results
 First of all, you will need to download the corresponding datase and place it in the 
-
-  1. ../dataset/nodef/ directory for non-defended closed world 
-  
-  2. ../dataset/WTFPAD/ directory for WTF-PAD closed world 
+1. `../dataset/nodef/` directory for non-defended closed world 
+2. `../dataset/WTFPAD/` directory for WTF-PAD closed world 
   
 ### Attack accuracy
 #### For non-defended closed world
