@@ -2,7 +2,7 @@
 
 They dataset be downloaded from [here](https://drive.google.com/drive/folders/187JjQ-Dz4g4zMBkOE4yo_rZcDkkT5zth)
 
-The flies include
+The files include
 - X_train_WTFPAD.pkl
 - y_train_WTFPAD.pkl
 - X_valid_WTFPAD.pkl

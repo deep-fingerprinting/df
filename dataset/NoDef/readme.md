@@ -2,7 +2,7 @@
 
 They dataset be downloaded from [here](https://drive.google.com/open?id=1sFjUqo3r4E0KZsTWF0f-3zfLM5FfRot9)
 
-The flies include
+The files include
 - X_train_NoDef.pkl
 - y_train_NoDef.pkl
 - X_valid_NoDef.pkl
