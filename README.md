@@ -22,7 +22,7 @@ The datasets for the open world are also available upon request to the authors.
 ### Dataset used for non-defended dataset in the closed-world scenario
 https://drive.google.com/open?id=1sFjUqo3r4E0KZsTWF0f-3zfLM5FfRot9
 
-The dataset including 6 files 
+The dataset including 6 files:
 - `X_train_NoDef.pkl` : Packet's directions sequence (used as the training data)
 - `y_train_NoDef.pkl` : Corresponding website's classes sequece (used as the training data)
 - `X_valid_NoDef.pkl` : Packet's directions sequence (used as the validation data)
@@ -35,7 +35,7 @@ Before training and evaluating DF model please place these files into `../df/dat
 ### Dataset used for defended dataset(WTF-PAD) in the closed-world scenario
 https://drive.google.com/open?id=187JjQ-Dz4g4zMBkOE4yo_rZcDkkT5zth
 
-The dataset including 6 files 
+The dataset including 6 files: 
 - `X_train_WTFPAD.pkl` : Packet's directions sequence (used as the training data)
 - `y_train_WTFPAD.pkl` : Corresponding website's classes sequece (used as the training data)
 - `X_valid_WTFPAD.pkl` : Packet's directions sequence (used as the validation data)
