@@ -17,7 +17,8 @@ We published the datasets of web traffic traces produced for the closed-world ev
 
 They can be downloaded in links below.
 
-The datasets for the open world are also available upon request to the authors.
+The datasets for the open world and source code will be also available soon.
+
 
 ### Dataset used for non-defended dataset in the closed-world scenario
 https://drive.google.com/open?id=1sFjUqo3r4E0KZsTWF0f-3zfLM5FfRot9
