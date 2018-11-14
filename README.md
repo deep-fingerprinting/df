@@ -17,7 +17,7 @@ You can find our paper on [here](https://dl.acm.org/citation.cfm?id=3243768)
 ## Dataset
 We publish the datasets of web traffic traces produced for the closed-world evaluations on non-defended, WTF-PAD and Walkie-Talkie datasets. However, due to the limitation on the size of uploaded files set by Github, we upload our dataset to google drive repository instead. 
 
-The dataset can be downloaded in this [link](https://drive.google.com/drive/folders/1kxjqlaWWJbMW56E3kbXlttqcKJFkeCy6?usp=sharing)
+The dataset can be downloaded from this [link](https://drive.google.com/drive/folders/1kxjqlaWWJbMW56E3kbXlttqcKJFkeCy6?usp=sharing)
 
 ## Dataset Structure
 - We serialized the dataset to the pickle file.
@@ -177,7 +177,7 @@ Top-2 Accuracy: 0.992000
 # Open-World Evaluation
 ## Dataset
 - The dataset format and description are the same as closed-world dataset
-- The dataset can be downloaded in this [link](https://drive.google.com/drive/folders/1EDgNIM98PlayyUplKbaviHlDpVhVa1yS?usp=sharing)
+- The dataset can be downloaded from this [link](https://drive.google.com/drive/folders/1EDgNIM98PlayyUplKbaviHlDpVhVa1yS?usp=sharing)
 
 ## Reproduce Results
 First of all, you will need to download the corresponding dataset and place it in: 
