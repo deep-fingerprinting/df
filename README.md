@@ -15,55 +15,56 @@ You can find our paper on [here](https://dl.acm.org/citation.cfm?id=3243768)
 
 # Closed-World Evaluation
 ## Dataset
-We published the datasets of web traffic traces produced for the closed-world evaluations on non-defended, WTF-PAD and Walkie-Talkie datasets. However, due to the limitation on the size of uploaded files on Github, we uploaded our dataset to google drive repository instead. 
+We publish the datasets of web traffic traces produced for the closed-world evaluations on non-defended, WTF-PAD and Walkie-Talkie datasets. However, due to the limitation on the size of uploaded files set by Github, we upload our dataset to google drive repository instead. 
 
 The dataset can be downloaded in this [link](https://drive.google.com/drive/folders/1kxjqlaWWJbMW56E3kbXlttqcKJFkeCy6?usp=sharing)
 
-## Dataset structure
+## Dataset Structure
 - We serialized the dataset to the pickle file.
 - The researcher can simply use the cPickle python's library to load the dataset
 
-## Descriptions of dataset
+## Descriptions of Dataset
 - In each sub-folder, it contains 6 different files 
 ```   
 X_<type of data>_<type of evaluation>.pkl : Packet's directions sequence
 y_<type of data>_<type of evaluation>.pkl : Corresponding website's classes sequece
 
-<type of data> --three different data sets used for training, validation, and testing 
+<type of data> --Three different data sets used for training, validation, and testing 
 
-<type_of_evaluation> --three different evaluations: 
+<type_of_evaluation> --Three different evaluations: 
                        NoDef: Tor's trafic traces without defense
                        WTFPAD: Tor's trafic traces with WTF-PAD defense
                        WalkieTalkie: WTFPAD: Tor's trafic traces with Walkie-Talkie defense
 ```
 
-## Dataset formant
-In all datasets, we all use the same data structure as following:
-- X_****.pkl file contains the array of network traffic sequences.
-  - The dimension of X's dataset is [n x 5000] in which 
-    n --> total number of network traffic sequences instances
-    5000 --> refers to the fixed length of each network traffic sequence instance.
-- y_***.pkl file contains the array of the websites' labels
-  - The dimension of y's dataset is [n] in which
-    n --> total number of network traffic sequences instances
-
-E.g.   
+## Dataset Format
+In all datasets, we use the same data structure as following:
 ```
-X_train.pkl = [[+1,-1, ..., -1], ... ,[+1, +1, ..., -1]]
-y_train.pkl = [45, ... , 12]
+X_<type of data>_<type of evaluation>.pkl --Array of network traffic sequences.
+    The dimension of X's dataset is [n x 5000] in which 
+    n -- Total number of network traffic sequences instances
+    5000 -- Fixed length of each network traffic sequence instance.
+y_<type of data>_<type of evaluation>.pkl --Array of the websites' labels
+    The dimension of y's dataset is [n] in which
+    n --Total number of network traffic sequences instances
+
+E.g.
+
+X_<type of data>_<type of evaluation>.pkl = [[+1,-1, ..., -1], ... ,[+1, +1, ..., -1]]
+y_<type of data>_<type of evaluation>.pkl = [45, ... , 12]
 In this case:
    - the 1st packet sequence [+1,-1, ..., -1] belongs to website number 45
    - the last packet sequence [+1, +1, ..., -1] belongs to website number 12
 ```
-Before training and evaluating DF model please place these files into ../df/dataset/ClosedWorld/
-## Reproduce results
-First of all, you will need to download the corresponding datase and place it in the 
-  1. ../dataset/ClosedWorld/NoDef/ directory for non-defended   
-  2. ../dataset/ClosedWorld/WTFPAD/ directory for WTF-PAD
-  3. ../dataset/ClosedWorld/WalkieTalkie/ directory for Walkie-Talkie
+Before training and evaluating DF model please place the downloaded datasets into ../df/dataset/ClosedWorld/
+## Reproduce Results
+First of all, you will need to download the corresponding dataset and place it in: 
+  ../dataset/ClosedWorld/NoDef/ directory for non-defended   
+  ../dataset/ClosedWorld/WTFPAD/ directory for WTF-PAD
+  ../dataset/ClosedWorld/WalkieTalkie/ directory for Walkie-Talkie
   
-## Attack accuracy
-#### Non-defended evaluation
+## Attack Accuracy
+#### Non-Defended Evaluation
 ```
 python src/ClosedWorld_DF_NoDef.py
 
@@ -99,7 +100,7 @@ Epoch 30/30
  - 75s - loss: 0.0408 - acc: 0.9892 - val_loss: 0.0790 - val_acc: 0.9817
 ('Testing accuracy:', '0.9827368421052631')
 ```
-#### WTF-PAD evaluation
+#### WTF-PAD Evaluation
 ```
 python src/ClosedWorld_DF_WTFPAD.py
 
@@ -135,7 +136,7 @@ Epoch 40/40
  - 75s - loss: 0.2573 - acc: 0.9250 - val_loss: 0.3709 - val_acc: 0.9069
 ('Testing accuracy:', '0.906947368471246')
 ```
-#### Walkie-Talkie evaluation (also include top-2 prediction)
+#### Walkie-Talkie Evaluation (also include top-2 prediction)
 ```
 python src/ClosedWorld_DF_WalkieTalkie.py
 
@@ -175,25 +176,25 @@ Top-2 Accuracy: 0.992000
 ```
 # Open-World Evaluation
 ## Dataset
-- The dataset format and description is the same as closed-world dataset
+- The dataset format and description are the same as closed-world dataset
 - The dataset can be downloaded in this [link](https://drive.google.com/drive/folders/1EDgNIM98PlayyUplKbaviHlDpVhVa1yS?usp=sharing)
 
-## Reproduce results
-First of all, you will need to download the corresponding datase and place it in the 
-  1. ../dataset/OpenWorld/NoDef/ directory for non-defended   
-  2. ../dataset/OpenWorld/WTFPAD/ directory for WTF-PAD
-  3. ../dataset/OpenWorld/WalkieTalkie/ directory for Walkie-Talkie
+## Reproduce Results
+First of all, you will need to download the corresponding dataset and place it in: 
+  ../dataset/OpenWorld/NoDef/ directory for non-defended   
+  ../dataset/OpenWorld/WTFPAD/ directory for WTF-PAD
+  ../dataset/OpenWorld/WalkieTalkie/ directory for Walkie-Talkie
 
-## Source codes' description
-The source codes contains two part:
+## Source Code's Description
+The source codes contain two part:
 ### Training the WF classifier
-- The model includes both monitored and unmonitored website to train the DF model with respect to each evaluation.
+- The model includes both monitored and unmonitored websites used to train the DF model with respect to each evaluation.
 - To train the model
 ```
 python src/OpenWorld_DF_<type of evaluation>_Training.py
 ```
 - The output of this part is the trained DF model that will be used in the next part.
-- After finish training the model, the trained DF model will be automatically saved at 
+- After finishing training the model, the trained DF model will be automatically saved at 
 ```
 ../saved_trained_models/OpenWorld_<type of evaluation>.h5 
 ```
