@@ -1,4 +1,4 @@
-# Deep Fingerprinting
+Deep Fingerprinting
 :warning: experimental - PLEASE BE CAREFUL. Intended for reasearch purposes only.
 
 The source code and dataset are used to demonstrate the DF model, and reproduce the results of the ACM CCS2018 paper:
@@ -11,63 +11,61 @@ In 2018 ACM SIGSAC Conference on Computer and Communications Security (CCS ’18
 October 15–19, 2018, Toronto, ON, Canada. ACM, New York, NY, USA, 16 pages. 
 https://doi.org/10.1145/3243734.3243768
 ```
+You can find our paper on [here](https://dl.acm.org/citation.cfm?id=3243768)
 
+# Closed-World Evaluation
 ## Dataset
-We published the datasets of web traffic traces produced for the closed-world evaluations on non-defended and WTF-PAD datasets. However, due to the limitation on the size of uploaded files on Github, we uploaded our dataset to google drive repository instead. 
+We published the datasets of web traffic traces produced for the closed-world evaluations on non-defended, WTF-PAD and Walkie-Talkie datasets. However, due to the limitation on the size of uploaded files on Github, we uploaded our dataset to google drive repository instead. 
 
-They can be downloaded in links below.
+The dataset can be downloaded in this [link](https://drive.google.com/drive/folders/1kxjqlaWWJbMW56E3kbXlttqcKJFkeCy6?usp=sharing)
 
-The datasets for the open world are also available upon request to the authors.
+## Dataset structure
+- We serialized the dataset to the pickle file.
+- The researcher can simply use the cPickle python's library to load the dataset
 
-### Dataset used for non-defended dataset in the closed-world scenario
-https://drive.google.com/open?id=1sFjUqo3r4E0KZsTWF0f-3zfLM5FfRot9
+## Descriptions of dataset
+- In each sub-folder, it contains 6 different files 
+```   
+X_<type of data>_<type of evaluation>.pkl : Packet's directions sequence
+y_<type of data>_<type of evaluation>.pkl : Corresponding website's classes sequece
 
-The dataset including 6 files 
+<type of data> --three different data sets used for training, validation, and testing 
 
-X_train_NoDef.pkl : Packet's directions sequence (used as the training data)
+<type_of_evaluation> --three different evaluations: 
+                       NoDef: Tor's trafic traces without defense
+                       WTFPAD: Tor's trafic traces with WTF-PAD defense
+                       WalkieTalkie: WTFPAD: Tor's trafic traces with Walkie-Talkie defense
+```
 
-y_train_NoDef.pkl : Corresponding website's classes sequece (used as the training data)
+## Dataset formant
+In all datasets, we all use the same data structure as following:
+- X_****.pkl file contains the array of network traffic sequences.
+  - The dimension of X's dataset is [n x 5000] in which 
+    n --> total number of network traffic sequences instances
+    5000 --> refers to the fixed length of each network traffic sequence instance.
+- y_***.pkl file contains the array of the websites' labels
+  - The dimension of y's dataset is [n] in which
+    n --> total number of network traffic sequences instances
 
-X_valid_NoDef.pkl : Packet's directions sequence (used as the validation data)
-
-y_valid_NoDef.pkl : Corresponding website's classes sequece (used as the validation data)
-
-X_test_NoDef.pkl : Packet's directions sequence (used as the testing data)
-
-y_test_NoDef.pkl : Corresponding website's classes sequece (used as the testing data)
-
-Before training and evaluating DF model please place these files into ../df/dataset/NoDef/
-
-### Dataset used for defended dataset(WTF-PAD) in the closed-world scenario
-https://drive.google.com/open?id=187JjQ-Dz4g4zMBkOE4yo_rZcDkkT5zth
-
-The dataset including 6 files 
-
-X_train_WTFPAD.pkl : Packet's directions sequence (used as the training data)
-
-y_train_WTFPAD.pkl : Corresponding website's classes sequece (used as the training data)
-
-X_valid_WTFPAD.pkl : Packet's directions sequence (used as the validation data)
-
-y_valid_WTFPAD.pkl : Corresponding website's classes sequece (used as the validation data)
-
-X_test_WTFPAD.pkl : Packet's directions sequence (used as the testing data)
-
-y_test_WTFPAD.pkl : Corresponding website's classes sequece (used as the testing data)
-
-Before training and evaluating DF model please place these files into ../df/dataset/WTFPAD/
-
+E.g.   
+```
+X_train.pkl = [[+1,-1, ..., -1], ... ,[+1, +1, ..., -1]]
+y_train.pkl = [45, ... , 12]
+In this case:
+   - the 1st packet sequence [+1,-1, ..., -1] belongs to website number 45
+   - the last packet sequence [+1, +1, ..., -1] belongs to website number 12
+```
+Before training and evaluating DF model please place these files into ../df/dataset/ClosedWorld/
 ## Reproduce results
 First of all, you will need to download the corresponding datase and place it in the 
-
-  1. ../dataset/nodef/ directory for non-defended closed world 
+  1. ../dataset/ClosedWorld/NoDef/ directory for non-defended   
+  2. ../dataset/ClosedWorld/WTFPAD/ directory for WTF-PAD
+  3. ../dataset/ClosedWorld/WalkieTalkie/ directory for Walkie-Talkie
   
-  2. ../dataset/WTFPAD/ directory for WTF-PAD closed world 
-  
-### Attack accuracy
-#### For non-defended closed world
+## Attack accuracy
+#### Non-defended evaluation
 ```
-python src/DF_NoDef.py
+python src/ClosedWorld_DF_NoDef.py
 
 Training and evaluating DF model for closed-world scenario on non-defended dataset
 Number of Epoch:  30
@@ -101,10 +99,9 @@ Epoch 30/30
  - 75s - loss: 0.0408 - acc: 0.9892 - val_loss: 0.0790 - val_acc: 0.9817
 ('Testing accuracy:', '0.9827368421052631')
 ```
-
-#### For WTF-PAD closed world
+#### WTF-PAD evaluation
 ```
-python src/DF_WTFPAD.py
+python src/ClosedWorld_DF_WTFPAD.py
 
 Training and evaluating DF model for closed-world scenario on WTF-PAD dataset
 Number of Epoch:  40
@@ -138,6 +135,85 @@ Epoch 40/40
  - 75s - loss: 0.2573 - acc: 0.9250 - val_loss: 0.3709 - val_acc: 0.9069
 ('Testing accuracy:', '0.906947368471246')
 ```
+#### Walkie-Talkie evaluation (also include top-2 prediction)
+```
+python src/ClosedWorld_DF_WalkieTalkie.py
+
+Training and evaluating DF model for closed-world scenario on Walkie-Talkie dataset
+Number of Epoch:  30
+Loading and preparing data for training, and evaluating the model
+Loading Walkie-Talkie dataset for closed-world scenario
+Data dimensions:
+X: Training data's shape :  (80000, 5000)
+y: Training data's shape :  (80000,)
+X: Validation data's shape :  (5000, 5000)
+y: Validation data's shape :  (5000,)
+X: Testing data's shape :  (5000, 5000)
+y: Testing data's shape :  (5000,)
+(80000, 'train samples')
+(5000, 'validation samples')
+(5000, 'test samples')
+Building and training DF model
+Model compiled
+Train on 80000 samples, validate on 5000 samples
+Epoch 1/30
+ - 80s - loss: 2.5954 - acc: 0.2657 - val_loss: 1.7162 - val_acc: 0.3588
+Epoch 2/30
+ - 77s - loss: 1.4514 - acc: 0.4143 - val_loss: 1.0211 - val_acc: 0.4578
+Epoch 3/30
+ - 77s - loss: 1.1592 - acc: 0.4457 - val_loss: 0.8824 - val_acc: 0.4780
+
+...
+
+Epoch 29/30
+ - 77s - loss: 0.7291 - acc: 0.4932 - val_loss: 0.7300 - val_acc: 0.4964
+Epoch 30/30
+ - 77s - loss: 0.7286 - acc: 0.4947 - val_loss: 0.7340 - val_acc: 0.4965
+('Testing accuracy:', '0.497')
+Start evaluating Top-2 Accuracy
+Top-2 Accuracy: 0.992000 
+```
+# Open-World Evaluation
+## Dataset
+- The dataset format and description is the same as closed-world dataset
+- The dataset can be downloaded in this [link](https://drive.google.com/drive/folders/1EDgNIM98PlayyUplKbaviHlDpVhVa1yS?usp=sharing)
+
+## Reproduce results
+First of all, you will need to download the corresponding datase and place it in the 
+  1. ../dataset/OpenWorld/NoDef/ directory for non-defended   
+  2. ../dataset/OpenWorld/WTFPAD/ directory for WTF-PAD
+  3. ../dataset/OpenWorld/WalkieTalkie/ directory for Walkie-Talkie
+
+## Source codes' description
+The source codes contains two part:
+### Training the WF classifier
+- The model includes both monitored and unmonitored website to train the DF model with respect to each evaluation.
+- To train the model
+```
+python src/OpenWorld_DF_<type of evaluation>_Training.py
+```
+- The output of this part is the trained DF model that will be used in the next part.
+- After finish training the model, the trained DF model will be automatically saved at 
+```
+../saved_trained_models/OpenWorld_<type of evaluation>.h5 
+```
+### Evaluating the performance of the attacks
+- The performance of the attack in open-world scenario is evaluated by running  
+```
+python src/OpenWorld_DF_<type of evaluation>_Evaluation.py
+```
+- The output of the evaluation will be automatically saved in the 
+```
+../results/OpenWorld_<type of evaluation>.csv
+```
+- In each row of the csv file consists of the related performance metrics with respect to different thresholds including
+```
+True Positive (TP) False Positive (FP) True Negative (TN) False Negative)
+True Positive Rate (TPR) False Positive Rate (FPR)
+Precision and Recall
+```
+- The researcher can use this performance metric to plot ROC or Precision&Recall curves.
+- Note that our research work mainly focus on the use of precision and recall as the main performance metric.
 
 ## Questions and comments
 Please, address any questions or comments to the authors of the paper. The main developers of this code are:
