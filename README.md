@@ -56,13 +56,20 @@ In this case:
    - the 1st packet sequence [+1,-1, ..., -1] belongs to website number 45
    - the last packet sequence [+1, +1, ..., -1] belongs to website number 12
 ```
-Before training and evaluating DF model please place the downloaded datasets into dataset/ClosedWorld/
+Before training and evaluating DF model please place the downloaded datasets into 
+```
+dataset/ClosedWorld/ for close world
+dataset/OpenWorld/ for open world
+```
+
 ## Reproduce Results
-First of all, you will need to download the corresponding dataset and place it in: 
+First of all, you will need to download the corresponding dataset and place it in:
+  ``` 
   dataset/ClosedWorld/NoDef/ directory for non-defended   
   dataset/ClosedWorld/WTFPAD/ directory for WTF-PAD
   dataset/ClosedWorld/WalkieTalkie/ directory for Walkie-Talkie
-  
+  ```
+
 ## Attack Accuracy
 #### Non-Defended Evaluation
 ```
@@ -181,9 +188,11 @@ Top-2 Accuracy: 0.992000
 
 ## Reproduce Results
 First of all, you will need to download the corresponding dataset and place it in: 
+  ```
   dataset/OpenWorld/NoDef/ directory for non-defended   
   dataset/OpenWorld/WTFPAD/ directory for WTF-PAD
   dataset/OpenWorld/WalkieTalkie/ directory for Walkie-Talkie
+  ```
 
 ## Source Code's Description
 The source codes contain two part:
