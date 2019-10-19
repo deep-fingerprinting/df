@@ -12,7 +12,7 @@
 
 from keras import backend as K
 from utility import LoadDataWalkieTalkieCW
-from Model_WTFPAD import DFNet
+from Model_WalkieTalkie import DFNet
 import random
 from keras.utils import np_utils
 from keras.optimizers import Adamax
