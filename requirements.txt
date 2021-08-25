@@ -2,6 +2,6 @@ h5py==2.7.1
 Keras==2.1.6
 numpy==1.14.3
 scipy==1.1.0
-tensorflow==1.8.0
+tensorflow==2.5.1
 tensorflow-gpu==1.8.0
 
