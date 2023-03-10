@@ -1,0 +1,4 @@
+dataset/
+result/
+*.pyc
+saved_trained_models/
