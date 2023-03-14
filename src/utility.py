@@ -27,6 +27,7 @@ def LoadDataSetFromRawTraces(dir, pktSeqLen):
             seq = seq[0:pktSeqLen]
 
         data.append(seq)
+        f = f.split(".")[0]
         labels.append(int(f.split("-")[0]))
 
     return data, labels
