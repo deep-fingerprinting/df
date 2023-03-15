@@ -9,6 +9,12 @@ def LoadDataSetFromRawTraces(dir, pktSeqLen):
     data = []
     labels = []
     for f in files:
+        fn = f.split(".")[0]
+        if "-" in fn:
+            label = (int(fn.split("-")[0]))
+        else:
+            continue
+        
         seq = []
         with open(dir+'/'+f, "r") as fd:
             for line in fd.readlines():
@@ -27,8 +33,7 @@ def LoadDataSetFromRawTraces(dir, pktSeqLen):
             seq = seq[0:pktSeqLen]
 
         data.append(seq)
-        f = f.split(".")[0]
-        labels.append(int(f.split("-")[0]))
+        labels.append(label)
 
     return data, labels
 

@@ -31,7 +31,7 @@ description = "Training and evaluating DF model for closed-world scenario on non
 
 print(description)
 # Training the DF model
-NB_EPOCH = 30   # Number of training epoch
+NB_EPOCH = 100   # Number of training epoch
 print("Number of Epoch: ", NB_EPOCH)
 BATCH_SIZE = 128 # Batch size
 VERBOSE = 2 # Output display mode

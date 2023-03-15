@@ -45,6 +45,9 @@ INPUT_SHAPE = (LENGTH,1)
 # Data: shuffled and split between train and test sets
 print(("Loading and preparing data for training, and evaluating the model"))
 X, y = LoadDataSetFromRawTraces("../dataset/closed-world-original", LENGTH)
+NB_CLASSES = max(y) + 1 if max(y) + 1 > NB_CLASSES else NB_CLASSES
+print("Sample data:", X[0])
+print("Number of class:", NB_CLASSES)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1)
 X_train, X_valid, y_train, y_valid = train_test_split(X_train, y_train, test_size=0.2, random_state=1)
 
