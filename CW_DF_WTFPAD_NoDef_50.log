@@ -1,0 +1,129 @@
+PS F:\deep-fingerprinting> & "C:/Program Files/Python310/python.exe" f:/deep-fingerprinting/src/ClosedWorld_DF_NoDef.py
+2023-03-16 11:14:57.993613: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2023-03-16 11:14:57.994114: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+Training and evaluating DF model for closed-world scenario on non-defended dataset
+Number of Epoch:  50
+Loading and preparing data for training, and evaluating the model
+Sample data: [-1, 1, -1, -1, 1, 1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, -1, 1, -1, -1, 1, 1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, -1, 1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, -1, -1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, -1, 1, -1, -1, -1, -1, -1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1, -1, -1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, 1, 1, -1, -1, -1, -1, 
+-1, -1, -1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
+-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, 1, 1, -1, -1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, 1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, -1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
+-1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1, 1, 1]
+Number of class: 100
+2516 train samples
+630 validation samples
+787 test samples
+Building and training DF model
+2023-03-16 11:15:41.866318: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2023-03-16 11:15:41.868388: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublas64_11.dll'; dlerror: cublas64_11.dll not found
+2023-03-16 11:15:41.870392: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublasLt64_11.dll'; dlerror: cublasLt64_11.dll not found
+2023-03-16 11:15:41.872447: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2023-03-16 11:15:41.874602: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'curand64_10.dll'; dlerror: curand64_10.dll not found
+2023-03-16 11:15:41.876733: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusolver64_11.dll'; dlerror: cusolver64_11.dll not found
+2023-03-16 11:15:41.879499: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusparse64_11.dll'; dlerror: cusparse64_11.dll not found
+2023-03-16 11:15:41.889676: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1934] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2023-03-16 11:15:41.900148: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Model compiled
+Epoch 1/50
+20/20 - 17s - loss: 4.9042 - accuracy: 0.0274 - val_loss: 4.5143 - val_accuracy: 0.0063 - 17s/epoch - 863ms/step
+Epoch 2/50
+20/20 - 11s - loss: 4.2037 - accuracy: 0.0700 - val_loss: 4.5651 - val_accuracy: 0.0111 - 11s/epoch - 541ms/step
+Epoch 3/50
+20/20 - 13s - loss: 3.8334 - accuracy: 0.1065 - val_loss: 4.7201 - val_accuracy: 0.0095 - 13s/epoch - 646ms/step
+Epoch 4/50
+20/20 - 11s - loss: 3.4343 - accuracy: 0.1530 - val_loss: 5.0029 - val_accuracy: 0.0095 - 11s/epoch - 554ms/step
+Epoch 5/50
+20/20 - 12s - loss: 3.1783 - accuracy: 0.1983 - val_loss: 5.2064 - val_accuracy: 0.0095 - 12s/epoch - 576ms/step
+Epoch 6/50
+20/20 - 11s - loss: 2.8732 - accuracy: 0.2659 - val_loss: 5.6077 - val_accuracy: 0.0048 - 11s/epoch - 564ms/step
+Epoch 7/50
+20/20 - 11s - loss: 2.6409 - accuracy: 0.2949 - val_loss: 5.9942 - val_accuracy: 0.0016 - 11s/epoch - 531ms/step
+Epoch 8/50
+20/20 - 10s - loss: 2.4319 - accuracy: 0.3569 - val_loss: 6.1992 - val_accuracy: 0.0032 - 10s/epoch - 524ms/step
+Epoch 9/50
+20/20 - 10s - loss: 2.2294 - accuracy: 0.4062 - val_loss: 6.2993 - val_accuracy: 0.0016 - 10s/epoch - 525ms/step
+Epoch 10/50
+20/20 - 11s - loss: 2.0531 - accuracy: 0.4428 - val_loss: 6.4640 - val_accuracy: 0.0048 - 11s/epoch - 557ms/step
+Epoch 11/50
+20/20 - 10s - loss: 1.9447 - accuracy: 0.4766 - val_loss: 6.1668 - val_accuracy: 0.0095 - 10s/epoch - 522ms/step
+Epoch 12/50
+20/20 - 11s - loss: 1.7932 - accuracy: 0.5103 - val_loss: 6.0327 - val_accuracy: 0.0048 - 11s/epoch - 555ms/step
+Epoch 13/50
+20/20 - 11s - loss: 1.6976 - accuracy: 0.5378 - val_loss: 6.0353 - val_accuracy: 0.0048 - 11s/epoch - 536ms/step
+Epoch 14/50
+20/20 - 10s - loss: 1.5506 - accuracy: 0.5779 - val_loss: 5.6987 - val_accuracy: 0.0127 - 10s/epoch - 523ms/step
+Epoch 15/50
+20/20 - 10s - loss: 1.4575 - accuracy: 0.6061 - val_loss: 5.3614 - val_accuracy: 0.0206 - 10s/epoch - 517ms/step
+Epoch 16/50
+20/20 - 10s - loss: 1.3774 - accuracy: 0.6276 - val_loss: 5.0743 - val_accuracy: 0.0397 - 10s/epoch - 517ms/step
+Epoch 17/50
+20/20 - 10s - loss: 1.3337 - accuracy: 0.6367 - val_loss: 4.9748 - val_accuracy: 0.0413 - 10s/epoch - 515ms/step
+Epoch 18/50
+20/20 - 10s - loss: 1.2130 - accuracy: 0.6793 - val_loss: 4.1991 - val_accuracy: 0.0921 - 10s/epoch - 523ms/step
+Epoch 19/50
+20/20 - 10s - loss: 1.1720 - accuracy: 0.6848 - val_loss: 3.7404 - val_accuracy: 0.1222 - 10s/epoch - 517ms/step
+Epoch 20/50
+20/20 - 10s - loss: 1.0760 - accuracy: 0.7087 - val_loss: 2.9833 - val_accuracy: 0.2175 - 10s/epoch - 516ms/step
+Epoch 21/50
+20/20 - 10s - loss: 1.0286 - accuracy: 0.7190 - val_loss: 2.8899 - val_accuracy: 0.2397 - 10s/epoch - 515ms/step
+Epoch 22/50
+20/20 - 10s - loss: 0.9715 - accuracy: 0.7381 - val_loss: 2.4979 - val_accuracy: 0.2905 - 10s/epoch - 516ms/step
+Epoch 23/50
+20/20 - 11s - loss: 0.9324 - accuracy: 0.7452 - val_loss: 2.1102 - val_accuracy: 0.3825 - 11s/epoch - 540ms/step
+Epoch 24/50
+20/20 - 10s - loss: 0.8938 - accuracy: 0.7647 - val_loss: 1.6371 - val_accuracy: 0.5063 - 10s/epoch - 517ms/step
+Epoch 25/50
+20/20 - 10s - loss: 0.8077 - accuracy: 0.7766 - val_loss: 1.0868 - val_accuracy: 0.6905 - 10s/epoch - 513ms/step
+Epoch 26/50
+20/20 - 11s - loss: 0.7809 - accuracy: 0.7878 - val_loss: 1.1293 - val_accuracy: 0.6889 - 11s/epoch - 534ms/step
+Epoch 27/50
+20/20 - 11s - loss: 0.7363 - accuracy: 0.8116 - val_loss: 0.9953 - val_accuracy: 0.7175 - 11s/epoch - 560ms/step
+Epoch 28/50
+20/20 - 12s - loss: 0.6913 - accuracy: 0.8200 - val_loss: 0.6530 - val_accuracy: 0.8365 - 12s/epoch - 622ms/step
+Epoch 29/50
+20/20 - 12s - loss: 0.6695 - accuracy: 0.8267 - val_loss: 0.7361 - val_accuracy: 0.8095 - 12s/epoch - 586ms/step
+Epoch 30/50
+20/20 - 12s - loss: 0.6141 - accuracy: 0.8410 - val_loss: 0.6083 - val_accuracy: 0.8460 - 12s/epoch - 579ms/step
+Epoch 31/50
+20/20 - 12s - loss: 0.6040 - accuracy: 0.8386 - val_loss: 0.6106 - val_accuracy: 0.8397 - 12s/epoch - 576ms/step
+Epoch 32/50
+20/20 - 12s - loss: 0.5649 - accuracy: 0.8533 - val_loss: 0.5127 - val_accuracy: 0.8571 - 12s/epoch - 604ms/step
+Epoch 33/50
+20/20 - 12s - loss: 0.5248 - accuracy: 0.8605 - val_loss: 0.4890 - val_accuracy: 0.8683 - 12s/epoch - 589ms/step
+Epoch 34/50
+20/20 - 13s - loss: 0.4903 - accuracy: 0.8732 - val_loss: 0.5462 - val_accuracy: 0.8444 - 13s/epoch - 652ms/step
+Epoch 35/50
+20/20 - 12s - loss: 0.4901 - accuracy: 0.8672 - val_loss: 0.4738 - val_accuracy: 0.8635 - 12s/epoch - 592ms/step
+Epoch 36/50
+20/20 - 11s - loss: 0.4624 - accuracy: 0.8756 - val_loss: 0.4542 - val_accuracy: 0.8778 - 11s/epoch - 547ms/step
+Epoch 37/50
+20/20 - 10s - loss: 0.4396 - accuracy: 0.8796 - val_loss: 0.4304 - val_accuracy: 0.8857 - 10s/epoch - 524ms/step
+Epoch 38/50
+20/20 - 10s - loss: 0.4329 - accuracy: 0.8919 - val_loss: 0.4798 - val_accuracy: 0.8571 - 10s/epoch - 518ms/step
+Epoch 39/50
+20/20 - 10s - loss: 0.3974 - accuracy: 0.8931 - val_loss: 0.4466 - val_accuracy: 0.8762 - 10s/epoch - 518ms/step
+Epoch 40/50
+20/20 - 10s - loss: 0.3662 - accuracy: 0.9058 - val_loss: 0.4448 - val_accuracy: 0.8730 - 10s/epoch - 518ms/step
+Epoch 41/50
+20/20 - 10s - loss: 0.3503 - accuracy: 0.9074 - val_loss: 0.3937 - val_accuracy: 0.8841 - 10s/epoch - 520ms/step
+Epoch 42/50
+20/20 - 10s - loss: 0.3254 - accuracy: 0.9126 - val_loss: 0.3883 - val_accuracy: 0.8841 - 10s/epoch - 519ms/step
+Epoch 43/50
+20/20 - 10s - loss: 0.3157 - accuracy: 0.9213 - val_loss: 0.4108 - val_accuracy: 0.8905 - 10s/epoch - 518ms/step
+Epoch 44/50
+20/20 - 10s - loss: 0.2839 - accuracy: 0.9340 - val_loss: 0.4080 - val_accuracy: 0.8968 - 10s/epoch - 518ms/step
+Epoch 45/50
+20/20 - 10s - loss: 0.2729 - accuracy: 0.9320 - val_loss: 0.3679 - val_accuracy: 0.8952 - 10s/epoch - 517ms/step
+Epoch 46/50
+20/20 - 10s - loss: 0.2924 - accuracy: 0.9173 - val_loss: 0.3371 - val_accuracy: 0.9016 - 10s/epoch - 524ms/step
+Epoch 47/50
+20/20 - 10s - loss: 0.2935 - accuracy: 0.9189 - val_loss: 0.3533 - val_accuracy: 0.8984 - 10s/epoch - 518ms/step
+Epoch 48/50
+20/20 - 10s - loss: 0.2775 - accuracy: 0.9241 - val_loss: 0.3862 - val_accuracy: 0.8952 - 10s/epoch - 518ms/step
+Epoch 49/50
+20/20 - 10s - loss: 0.2543 - accuracy: 0.9340 - val_loss: 0.3309 - val_accuracy: 0.9000 - 10s/epoch - 517ms/step
+Epoch 50/50
+20/20 - 10s - loss: 0.2438 - accuracy: 0.9376 - val_loss: 0.3561 - val_accuracy: 0.9048 - 10s/epoch - 521ms/step
+25/25 - 1s - loss: 0.2858 - accuracy: 0.9098 - 534ms/epoch - 21ms/step
+Testing accuracy: 0.9097840189933777

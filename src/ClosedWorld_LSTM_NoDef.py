@@ -11,7 +11,7 @@
 
 
 from keras import backend as K
-from utility import LoadDataSetFromRawTraces
+from utility import LoadDataSetFromRawTraces, LoadTsDataSetFromRawTraces
 from Model_1dConv_LSTM import DFNet
 import random
 from keras.utils import np_utils
@@ -44,7 +44,7 @@ INPUT_SHAPE = (LENGTH,1)
 
 # Data: shuffled and split between train and test sets
 print(("Loading and preparing data for training, and evaluating the model"))
-X, y = LoadDataSetFromRawTraces("../dataset/wt-batch", LENGTH)
+X, y = LoadTsDataSetFromRawTraces("./dataset/wt-batch", LENGTH)
 NB_CLASSES = max(y) + 1 if max(y) + 1 > NB_CLASSES else NB_CLASSES
 print("Sample data:", X[0])
 print("Number of class:", NB_CLASSES)
@@ -90,10 +90,12 @@ model.compile(loss="categorical_crossentropy", optimizer=OPTIMIZER,
 print("Model compiled")
 
 # Start training
-history = model.fit(X_train, y_train,
-		batch_size=BATCH_SIZE, epochs=NB_EPOCH,
-		verbose=VERBOSE, validation_data=(X_valid, y_valid))
-
+try:
+	history = model.fit(X_train, y_train,
+			batch_size=BATCH_SIZE, epochs=NB_EPOCH,
+			verbose=VERBOSE, validation_data=(X_valid, y_valid))
+except:
+	print("Early Stop")
 
 # Start evaluating model with testing data
 score_test = model.evaluate(X_test, y_test, verbose=VERBOSE)

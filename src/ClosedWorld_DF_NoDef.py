@@ -11,7 +11,7 @@
 
 
 from keras import backend as K
-from utility import LoadDataSetFromRawTraces
+from utility import LoadDataSetFromRawTraces, LoadTsDataSetFromRawTraces
 from Model_NoDef import DFNet
 import random
 from keras.utils import np_utils
@@ -31,7 +31,7 @@ description = "Training and evaluating DF model for closed-world scenario on non
 
 print(description)
 # Training the DF model
-NB_EPOCH = 30   # Number of training epoch
+NB_EPOCH = 100   # Number of training epoch
 print("Number of Epoch: ", NB_EPOCH)
 BATCH_SIZE = 128 # Batch size
 VERBOSE = 2 # Output display mode
@@ -44,7 +44,7 @@ INPUT_SHAPE = (LENGTH,1)
 
 # Data: shuffled and split between train and test sets
 print(("Loading and preparing data for training, and evaluating the model"))
-X, y = LoadDataSetFromRawTraces("../dataset/closed-world-original", LENGTH)
+X, y = LoadTsDataSetFromRawTraces("./dataset/wt-batch", LENGTH)
 NB_CLASSES = max(y) + 1 if max(y) + 1 > NB_CLASSES else NB_CLASSES
 print("Sample data:", X[0])
 print("Number of class:", NB_CLASSES)
